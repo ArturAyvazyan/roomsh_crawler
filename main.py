@@ -4,7 +4,7 @@ import uvicorn
 from fastapi import FastAPI
 
 from config_handler import server_settings
-from src.users_routers.shop_router import shop_router
+from src.routers.shop_router import shop_router
 from src.events.crawler import Crawler
 
 

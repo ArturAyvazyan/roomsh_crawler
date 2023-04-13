@@ -24,6 +24,6 @@ setup(
         'importlib-metadata; python_version == "3.11"',
     ],
     entry_points={
-        "console_scripts": ["roomsh_crawler = src.users_routers.shop_router:app"]
+        "console_scripts": ["roomsh_crawler = src.routers.shop_router:app"]
     },
 )
