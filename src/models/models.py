@@ -20,12 +20,12 @@ class ShopInformation(BaseModel):
     additional_email: Union[str, None] = None
     contact_phone: Union[str, None] = None
 
-    @validator('inn')
+    @validator("inn")
     def _inn(cls, v):
         # 7743013902
         return v.inn
 
-    @validator('ogrn')
+    @validator("ogrn")
     def _ogrn(cls, v):
         # 1053600591197
         # 484833211
