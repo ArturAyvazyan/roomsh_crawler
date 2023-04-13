@@ -1,6 +1,6 @@
 # roomsh_crawler
-This project is simply parsing websites and get shops and their products info;
-then store this data consistently with main project inside small redis db, so that main project can store this inside database
+This project is simply parsing websites and get shops and their products info,
+then store this data consistently with main project inside small redis db, so that main project can grab it and store this inside main database
 
 Few notes about this project:
  - redis choosen as main DB beacause there is no need in long-term data storage, all data flushes once a day
