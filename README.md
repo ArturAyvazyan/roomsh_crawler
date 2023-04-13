@@ -1,5 +1,5 @@
 # roomsh_crawler
-This project is simply parsing websites and get shops and their products info,
+This module is simply parsing websites and get shops and their products info,
 then store this data consistently with main project inside small redis db, so that main project can grab it and store this inside main database
 
 Few notes about this project:
