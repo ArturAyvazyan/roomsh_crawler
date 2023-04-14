@@ -4,7 +4,7 @@ from dependency_container import SimpleDependencyContainer
 
 class RedisRepository:
     def __init__(self):
-        self.server = SimpleDependencyContainer.redis_client
+        self.server = SimpleDependencyContainer.redis_client.connect()
 
     async def get_shop(self, shop: str) -> ShopModel:
         shop = self.server.get(shop)
