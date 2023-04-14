@@ -1,9 +1,11 @@
 import redis
 from config_handler import redis_settings
+
 from src.models.models import ShopModel
+from src.clients.base_client import BaseClient
 
 
-class RedisClient:
+class RedisClient(BaseClient):
     def __init__(self):
         self.host = redis_settings["HOST"]
         self.port = redis_settings["PORT"]
