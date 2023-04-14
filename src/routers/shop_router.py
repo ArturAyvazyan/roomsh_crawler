@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Body
 from dependency_container import SimpleDependencyContainer
-from src.models.models import ShopModel, Product, ShopInformation
+from src.models.shop_models import ShopModel, Product, ShopInformation
 
 redis_client = SimpleDependencyContainer.redis_client
 
@@ -13,7 +13,7 @@ shop_router = APIRouter(
 
 @shop_router.post("/get_shops")
 def get_shops() -> dict:
-    return redis_client.get_all_shops()
+    return redis_client.get_shops()
 
 
 @shop_router.post("/get_shop")

@@ -6,3 +6,4 @@ with open("CONFIG.toml", "rb") as f:
     server_settings = data["server_settings"]
     redis_settings = data["redis_settings"]
     tg_settings = data["tg_settings"]
+    websites_to_crawl = data["websites_to_crawl"]

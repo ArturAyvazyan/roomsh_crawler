@@ -1,6 +1,6 @@
 from typing import Union
 from pydantic import BaseModel, validator
-from src.models.enums import LegalForms, Cities, ShroomType
+from src.enums.enums import LegalForms, Cities, ShroomType
 
 
 class SpotAddress(BaseModel):

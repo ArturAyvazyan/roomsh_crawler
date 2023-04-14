@@ -21,6 +21,7 @@ setup(
         "fastapi",
         "uvicorn",
         "requests",
+        "pydantic",
         'importlib-metadata; python_version == "3.11"',
     ],
     entry_points={

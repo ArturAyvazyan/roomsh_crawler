@@ -1,35 +1,22 @@
 from abc import ABCMeta, abstractmethod
 
-from src.models.models import ShopModel
-
 
 class BaseClient(metaclass=ABCMeta):
     @abstractmethod
     def __init__(self):
+        self.timeout = 2.5
         self.host = ...
         self.port = ...
         self.server = ...
 
     @abstractmethod
-    def add_shop(self, shop: ShopModel):
+    def connect(self):
         ...
 
     @abstractmethod
-    def update_shop(self, shop: ShopModel):
+    def disconnect(self):
         ...
 
     @abstractmethod
-    def get_shop(self, shop: str) -> ShopModel:
-        ...
-
-    @abstractmethod
-    def get_all_shops(self) -> dict[str: ShopModel]:
-        ...
-
-    @abstractmethod
-    def clear_all(self):
-        ...
-
-    @abstractmethod
-    def get_diff(self, shop: ShopModel):
+    def restart(self):
         ...

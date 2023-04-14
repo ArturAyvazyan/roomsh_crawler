@@ -5,7 +5,7 @@ from fastapi import FastAPI
 
 from config_handler import server_settings
 from src.routers.shop_router import shop_router
-from src.events.crawler import Crawler
+from src.events.encrust_data import EncrustData
 
 
 app = FastAPI()
@@ -26,7 +26,8 @@ async def run():
 
 @app.on_event("startup")
 async def start():
-    asyncio.create_task(Crawler.start())
+    data_encruster = EncrustData()
+    asyncio.create_task(data_encruster.start())
 
 
 if __name__ == "__main__":
