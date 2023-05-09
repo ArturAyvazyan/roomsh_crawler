@@ -11,12 +11,11 @@ class RedisClient(BaseClient):  # TODO: aioredis
         self.port = redis_settings["PORT"]
 
     def connect(self):
-        self.server = redis.Redis(
-            host=redis_settings["HOST"],
-            port=redis_settings["PORT"],
+        return redis.Redis(
+            host=self.host,
+            port=self.port,
             decode_responses=True,
         )
-        return self.server
 
     def disconnect(self):
         ...

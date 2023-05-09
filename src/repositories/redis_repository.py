@@ -1,10 +1,10 @@
 from src.models.shop_models import ShopModel
-from dependency_container import SimpleDependencyContainer
+from dependency_containers.connection_dependency import SimpleConnectionDependencyContainer
 
 
-class RedisRepository:
+class ShopRepository:
     def __init__(self):
-        self.server = SimpleDependencyContainer.redis_client.connect()
+        self.server = SimpleConnectionDependencyContainer.redis_client
 
     async def get_shop(self, shop: str) -> ShopModel:
         shop = self.server.get(shop)

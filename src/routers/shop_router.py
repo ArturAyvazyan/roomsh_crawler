@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Body
-from dependency_container import SimpleDependencyContainer
+from dependency_containers.controller_dependency import SimpleDependencyContainer
 from src.models.shop_models import ShopModel, Product, ShopInformation
 
-redis_controller = SimpleDependencyContainer.redis_controller
+shop_controller = SimpleDependencyContainer.shop_controller
 
 shop_router = APIRouter(
     prefix="/shops",
@@ -13,23 +13,23 @@ shop_router = APIRouter(
 
 @shop_router.post("/get_shops")
 def get_shops() -> dict:
-    return redis_controller.get_shops()
+    return shop_controller.get_shops()
 
 
 @shop_router.post("/get_shop")
 def get_shop(shop: str = Body(embed=True)) -> ShopModel:
-    return redis_controller.get_shop(shop=shop)
+    return shop_controller.get_shop(shop=shop)
 
 
 @shop_router.post("/get_shops_product")
 def get_shops_product(shop: str = Body(embed=True)) -> Product:
-    shop = redis_controller.get_shop(shop=shop)
+    shop = shop_controller.get_shop(shop=shop)
     product = shop["product"]
     return Product.parse_obj(product)
 
 
 @shop_router.post("/get_shops_info")
 def get_shops_info(shop: str = Body(embed=True)) -> ShopInformation:
-    shop = redis_controller.get_shop(shop=shop)
+    shop = shop_controller.get_shop(shop=shop)
     shop_info = shop["shop_info"]
     return ShopInformation.parse_obj(shop_info)

@@ -7,14 +7,13 @@ class BaseClient(metaclass=ABCMeta):
         self.timeout = 2.5
         self.host = ...
         self.port = ...
-        self.server = ...
 
     @abstractmethod
-    def connect(self):
+    def connect(self, *args):
         ...
 
     @abstractmethod
-    def disconnect(self):
+    def disconnect(self, *args):
         ...
 
     @abstractmethod

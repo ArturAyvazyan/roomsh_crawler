@@ -1,11 +1,11 @@
 from src.models.shop_models import ShopModel
-from src.controllers.base_controlelr import BaseDataController
-from src.repositories.redis_repository import RedisRepository
+from src.controllers.base_controller import BaseDataController
+from src.repositories.redis_repository import ShopRepository
 
 
-class RedisController(BaseDataController):
+class ShopController(BaseDataController):
     def __init__(self):
-        self.repository = RedisRepository()
+        self.repository = ShopRepository()
 
     async def get_shop(self, shop: str) -> ShopModel:
         return await self.repository.get_shop(shop=shop)

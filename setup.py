@@ -18,10 +18,13 @@ setup(
     author_email="arcanwork@gmail.com",
     packages=setuptools.find_packages(where=CONFIG_PATH),
     install_requires=[
-        "fastapi",
-        "uvicorn",
-        "requests",
-        "pydantic",
+        "fastapi == 0.95.0",
+        "uvicorn == 0.21.1",
+        "redis == 4.5.4"
+        "requests == 2.28",
+        "pydantic == 1.10.7",
+        "pika == 1.3.2",
+        "PyYAML == 6.0",
         'importlib-metadata; python_version == "3.11"',
     ],
     entry_points={

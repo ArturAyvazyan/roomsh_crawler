@@ -1,5 +1,5 @@
 import asyncio
-from dependency_container import SimpleDependencyContainer
+from dependency_containers.controller_dependency import SimpleDependencyContainer
 
 
 class EncrustData:

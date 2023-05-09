@@ -7,3 +7,4 @@ with open("CONFIG.toml", "rb") as f:
     redis_settings = data["redis_settings"]
     tg_settings = data["tg_settings"]
     websites_to_crawl = data["websites_to_crawl"]
+    rabbit_settings = data["rabbit_settings"]

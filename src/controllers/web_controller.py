@@ -1,7 +1,7 @@
 import asyncio
 import requests
 
-from src.controllers.base_controlelr import BaseActionController
+from src.controllers.base_controller import BaseActionController
 
 
 class WebController(BaseActionController):
